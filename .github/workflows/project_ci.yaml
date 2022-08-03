@@ -32,10 +32,23 @@ jobs:
           cache: true
 
       - name: ✨ Check Formatting
+
         run: |
           flutter format lib
           flutter format --set-exit-if-changed lib test
 
+
+      # install dependencies
+      - name: 📦 Install Flutter Dependencies
+        run: |
+          flutter --version
+          flutter clean --verbose
+          flutter pub get --verbose
+
+
+      #        # generate files
+      #        - name: 📝 Generate Files
+      #          run: flutter pub run build_runner build --delete-conflicting-outputs --verbose
 
       # install dependencies
       - name: 📦 Install Flutter Dependencies
