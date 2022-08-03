@@ -33,7 +33,7 @@
             cache: true
 
         - name: ✨ Check Formatting
-          run: flutter format --set-exit-if-changed lib test
+          run: flutter format --set-exit-if-changed lib test --verbose
 
         # install dependencies
         - name: 📦 Install Flutter Dependencies
@@ -42,19 +42,19 @@
             flutter clean --verbose
             flutter pub get --verbose
 
-        # generate files
-        - name: 📝 Generate Files
-          run: flutter pub run build_runner build --delete-conflicting-outputs --verbose
+#        # generate files
+#        - name: 📝 Generate Files
+#          run: flutter pub run build_runner build --delete-conflicting-outputs --verbose
 
         # analyze the code
         - name: 🕵️ Analyze
-          run: flutter analyze lib test
+          run: flutter analyze lib test --verbose
 
         - name: 🧪 Run Tests
-          run: flutter test --coverage
+          run: flutter test --coverage --verbose
 
         - name: 📊 Generate Coverage Report
-          run: flutter pub global run test_cov_console
+          run: flutter pub global run test_cov_console --verbose
 
 #        # build apk fire emoji
 #        - name: 🔥 Build APK
