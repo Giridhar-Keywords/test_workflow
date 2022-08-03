@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'hello world'),
+      home: const MyHomePage(title: 'continuous Integration'),
     );
   }
 }
